@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Mihreteab React Redux App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> This is a simple app that shows the list of products on the `home page`, and clicking on any product title, should navigate to the `details page` of the product which shows more details about the selected product.
 
-## Available Scripts
+> Users should be able to filter the products based on the `product category` dropdown which is available on the `home page`.
 
-In the project directory, you can run:
 
-### `npm start`
+## Live Link
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Heroku]()
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Built With
 
-### `npm test`
+- ReactJS
+- Redux
+- API
+- React-router
+- Tailwind CSS
+- Webpack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+**To get a local copy up and running follow these simple example steps:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- For this project you don't need aditional tools.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Setup
 
-### `npm run eject`
+``` sh 
+  git clone git@github.com:Mre55/Mihreteab-react-redux.git
+``` 
+``` sh 
+  cd Mihreteab-react-redux
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- After cloning the repository on your local enviroment and run `npm install` on your terminal.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```sh
+  npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Usage
 
-## Learn More
+- To start the dev server just run `npm start`. You can work in your favorite Code Editor.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+👤 **Mihreteab Misganaw Aride**
 
-### Code Splitting
+- GitHub: [@Mre55](https://github.com/Mre55)
+- Twitter: [@MreMisganaw](https://twitter.com/MreMisganaw)
+- LinkedIn: [Mihreteab Aride](https://www.linkedin.com/in/mihreteab-aride-86249812b/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🤝 Contributing
 
-### Analyzing the Bundle Size
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Feel free to check the [issues page](https://github.com/Mre55/Mihreteab-react-redux/issues).
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 👏 Show your support
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Give a ⭐️ if you like this project!
