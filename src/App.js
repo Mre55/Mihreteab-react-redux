@@ -1,5 +1,10 @@
-const App = () => {
-  return <div className="text-3xl font-bold underline text-red-600">Hello, this is from App.js file.</div>;
-};
+
+import HomePage from "./components/HomePage";
+
+const App = () => (
+  <div>
+    <HomePage />
+  </div>
+)
 
 export default App;
