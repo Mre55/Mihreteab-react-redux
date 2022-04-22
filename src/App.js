@@ -1,5 +1,5 @@
 const App = () => {
-  return <div className="App">Hello, this is from App.js file.</div>;
+  return <div className="text-3xl font-bold underline text-red-600">Hello, this is from App.js file.</div>;
 };
 
 export default App;
