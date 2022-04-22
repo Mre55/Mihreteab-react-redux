@@ -13,8 +13,8 @@ const HomePage = () => {
       </div>
 
      <div className='flex gap-x-12 justify-center w-full'>
-      <div className='flex flex-col items-center mt-12 rounded w-full bg-gray-100 w-2/12 p-8 h-full'>
-        <div className='w-full border-2 border-gray-300 h-36 flex justify-center items-center'>
+      <div className='flex flex-col items-center mt-12 rounded w-full bg-gray-100 w-2/12 p-8 h-full hover:bg-gray-300'>
+        <div className='w-full border-2 border-gray-200 h-36 flex justify-center items-center'>
           Img
         </div>
         <div className='w-full mt-4 flex flex-col items-center'>
@@ -25,8 +25,8 @@ const HomePage = () => {
           </ul>
         </div>
       </div>
-      <div className='flex flex-col items-center mt-12 rounded w-full bg-gray-100 w-2/12 p-8 h-full'>
-        <div className='w-full border-2 border-gray-300 h-36 flex justify-center items-center'>
+      <div className='flex flex-col items-center mt-12 rounded w-full bg-gray-100 w-2/12 p-8 h-full  hover:bg-gray-300'>
+        <div className='w-full border-2 border-gray-200 h-36 flex justify-center items-center'>
           Img
         </div>
         <div className='w-full mt-4 flex flex-col items-center'>
@@ -37,8 +37,8 @@ const HomePage = () => {
           </ul>
         </div>
       </div>
-      <div className='flex flex-col items-center mt-12 rounded w-full bg-gray-100 w-2/12 p-8 h-full'>
-        <div className='w-full border-2 border-gray-300 h-36 flex justify-center items-center'>
+      <div className='flex flex-col items-center mt-12 rounded w-full bg-gray-100 w-2/12 p-8 h-full  hover:bg-gray-300'>
+        <div className='w-full border-2 border-gray-200 h-36 flex justify-center items-center'>
           Img
         </div>
         <div className='w-full mt-4 flex flex-col justify-center items-center'>
@@ -49,9 +49,7 @@ const HomePage = () => {
           </ul>
         </div>
       </div>
-     </div> 
-
-      {/* <DetailPage /> */}
+     </div>
     </div>
   )
 }
