@@ -1,57 +1,48 @@
-import React from 'react'
+import React from "react";
 
-import DetailPage from './DetailPage'
+import { NavLink } from "react-router-dom";
+import data from "./data.json";
+import laptop from "../assets/LaptopImg.jpeg";
 
 const HomePage = () => {
+  
+  const handleClick = (e) => {
+    // e.preventDefault();
+    console.log("e is ", e);
+    // <DetailPage id={e} />;
+  };
 
   return (
-    <div className='flex flex-col items-center h-screen mt-20'>
-      
-      <div className='flex w-full gap-x-20 justify-center'>
+    <div className="flex flex-col items-center h-screen mt-20">
+      <div className="flex w-full gap-x-20 justify-center">
         <h4>Product Category</h4>
-        <div className='border-2 w-32 flex justify-center'>Laptops</div>
+        <div className="border-2 w-32 flex justify-center">Laptops</div>
       </div>
 
-     <div className='flex gap-x-12 justify-center w-full'>
-      <div className='flex flex-col items-center mt-12 rounded w-full bg-gray-100 w-2/12 p-8 h-full hover:bg-gray-300'>
-        <div className='w-full border-2 border-gray-200 h-36 flex justify-center items-center'>
-          Img
-        </div>
-        <div className='w-full mt-4 flex flex-col items-center'>
-          <ul>
-            <li>Name: </li>
-            <li>Model: </li>
-            <li>Price: </li>
-          </ul>
-        </div>
+      <div className="flex gap-x-12 justify-center w-full">
+        {data.slice(0, 3).map((item) => (
+          <NavLink
+            to="/detailview"
+            className="flex flex-col items-center border-2 border-[#d7d7d7] mt-12 rounded w-full w-2/12 p-8 h-full hover:bg-[#d7d7d7]"
+            id={item.id}
+            key={item.id}
+            onClick={handleClick(item.id)}
+          >
+            <div className="w-full h-36 flex justify-center items-center">
+              <img src={laptop} alt="product" />
+            </div>
+            <div className="w-full mt-4 flex flex-col">
+              <ul>
+                <li>Name: {item.name}</li>
+                <li>Model: {item.model}</li>
+                <li>Price: {item.price}</li>
+              </ul>
+            </div>
+          </NavLink>
+        ))}
       </div>
-      <div className='flex flex-col items-center mt-12 rounded w-full bg-gray-100 w-2/12 p-8 h-full  hover:bg-gray-300'>
-        <div className='w-full border-2 border-gray-200 h-36 flex justify-center items-center'>
-          Img
-        </div>
-        <div className='w-full mt-4 flex flex-col items-center'>
-          <ul>
-            <li>Name: </li>
-            <li>Model: </li>
-            <li>Price: </li>
-          </ul>
-        </div>
-      </div>
-      <div className='flex flex-col items-center mt-12 rounded w-full bg-gray-100 w-2/12 p-8 h-full  hover:bg-gray-300'>
-        <div className='w-full border-2 border-gray-200 h-36 flex justify-center items-center'>
-          Img
-        </div>
-        <div className='w-full mt-4 flex flex-col justify-center items-center'>
-          <ul>
-            <li>Name: </li>
-            <li>Model: </li>
-            <li>Price: </li>
-          </ul>
-        </div>
-      </div>
-     </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
