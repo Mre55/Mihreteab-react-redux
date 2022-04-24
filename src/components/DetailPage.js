@@ -10,11 +10,11 @@ const DetailPage = (props) => {
 
   return (
     <div className='flex justify-center w-full h-screen'>
-      <div className="flex rounded bg-gray-100 w-7/12 mt-20 p-12 h-4/6 gap-x-24 ">
-        <div className="w-3/6 border-2 border-gray-200 h-4/6 flex justify-center items-center">
+      <div className="flex rounded border w-7/12 mt-20 p-12 h-4/6 gap-x-24 hover:shadow-2xl ">
+        <div className="w-3/6 h-4/6 flex justify-center items-center">
           <img src={laptop} alt="product" />
         </div>
-        <div className="">
+        <div className="mt-20">
           <ul className="flex flex-col gap-y-8">
             <li>Product Name: </li>
             <li>Price: </li>
