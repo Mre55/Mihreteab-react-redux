@@ -5,31 +5,26 @@ import { useParams, NavLink } from "react-router-dom";
 import laptopImg from "../assets/LaptopImg.jpeg";
 import mobile from "../assets/MobileImg.png";
 import { useDispatch, useSelector } from "react-redux";
-import { laptopFetch } from "../reducer/productReducer";
+import { fetchProducts } from "../reducer/productReducer";
 
 import closeIcon from "../assets/close-icon.jpeg";
 
 const DetailPage = () => {
-  
+
   const dispatch = useDispatch();
 
   const { currentData } = useParams();
-  const laptop = useSelector((state) => state.product);
+  const product = useSelector((state) => state.product);
 
-  const currentDataObj = laptop.find(
+  const currentDataObj = product.find(
     (item) => item.id === parseInt(currentData)
   );
   const categoryId = useSelector((state) => state.categoryId);
-  console.log(laptop, categoryId)
+
   useEffect(() => {
-    let catId;
-    if (currentData) {
-      catId = currentData;
-    } else {
-      catId = 0;
-    }
-    if (!laptop.length) {
-      laptopFetch(dispatch, categoryId);
+   
+    if (!product.length) {
+      fetchProducts(dispatch, categoryId);
     }
   }, []);
 

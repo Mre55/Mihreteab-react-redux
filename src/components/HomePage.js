@@ -6,20 +6,20 @@ import { NavLink } from "react-router-dom";
 import laptopImg from "../assets/LaptopImg.jpeg";
 import mobile from "../assets/MobileImg.png";
 
-import { laptopFetch, changeCategory } from "../reducer/productReducer";
+import { fetchProducts, changeCategory } from "../reducer/productReducer";
 
 const HomePage = () => {
 
   const dispatch = useDispatch();
 
-  const laptop = useSelector((state) => state.product);
+  const product = useSelector((state) => state.product);
 
   const categories = useSelector((state) => state.categories);
 
   const categoryId = useSelector((state) => state.categoryId);
 
   useEffect(() => {
-    laptopFetch(dispatch, categoryId);
+    fetchProducts(dispatch, categoryId);
   }, []);
 
 
@@ -30,16 +30,14 @@ const HomePage = () => {
   const handleCategoryId = (e) => {
     let categoryId = e === "Laptops" ? 0 : 1;
     changeCategory(categoryId, dispatch);
-    laptopFetch(dispatch, categoryId);
-    console.log("aftr change ", laptop, categoryId);
+    fetchProducts(dispatch, categoryId);
   };
 
   return (
     <div className="flex flex-col items-center h-screen max-w-[50%]">
       <div className="flex flex-col md:flex-row justify-evenly items-center shadow-md w-full py-8">
         <h4 className="font-bold text-xl">
-          {" "}
-          {laptop && laptop.length} Product Category
+          Product Category
         </h4>
 
         <div className="border-2 w-48 flex justify-center py-1">
@@ -57,7 +55,7 @@ const HomePage = () => {
       </div>
 
       <div className="flex gap-x-12 justify-center w-full flex-wrap">
-        {laptop.map((item) => (
+        {product.map((item) => (
           <NavLink
             to={`/detailview/${item.id}`}
             className="flex flex-col flex-wrap items-center border mt-12 rounded w-full w-2/12 p-8 hover:shadow-2xl min-w-[210px]"
