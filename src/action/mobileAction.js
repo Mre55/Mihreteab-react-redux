@@ -1,0 +1,2 @@
+
+export const FETCH_MOBILES = 'FETCH_MOBILES'

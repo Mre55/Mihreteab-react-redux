@@ -1,18 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useParams, NavLink } from "react-router-dom";
 
-import laptop from "../assets/LaptopImg.jpeg";
+import laptopImg from "../assets/LaptopImg.jpeg";
 import mobile from "../assets/MobileImg.png";
+import { useDispatch, useSelector } from "react-redux";
+import { laptopFetch } from "../reducer/productReducer";
+
 import closeIcon from "../assets/close-icon.jpeg";
 
-import data from "./data.json";
-
 const DetailPage = () => {
+  
+  const dispatch = useDispatch();
 
   const { currentData } = useParams();
+  const laptop = useSelector((state) => state.product);
 
-  const currentDataObj = data.find((item) => item.id === parseInt(currentData));
+  const currentDataObj = laptop.find(
+    (item) => item.id === parseInt(currentData)
+  );
+  const categoryId = useSelector((state) => state.categoryId);
+  console.log(laptop, categoryId)
+  useEffect(() => {
+    let catId;
+    if (currentData) {
+      catId = currentData;
+    } else {
+      catId = 0;
+    }
+    if (!laptop.length) {
+      laptopFetch(dispatch, categoryId);
+    }
+  }, []);
+
+  if (!currentDataObj) return null;
 
   return (
     <div className="flex justify-center w-full h-screen">
@@ -25,7 +46,7 @@ const DetailPage = () => {
 
         <div className="flex justify-center items-center">
           {currentDataObj.categoryId === 0 ? (
-            <img src={laptop} alt="product" />
+            <img src={laptopImg} alt="product" />
           ) : (
             <img src={mobile} alt="product" />
           )}
