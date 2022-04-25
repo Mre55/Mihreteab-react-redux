@@ -9,7 +9,6 @@ import mobile from "../assets/MobileImg.png";
 import { fetchProducts, changeCategory } from "../reducer/productReducer";
 
 const HomePage = () => {
-
   const dispatch = useDispatch();
 
   const product = useSelector((state) => state.product);
@@ -22,36 +21,31 @@ const HomePage = () => {
     fetchProducts(dispatch, categoryId);
   }, []);
 
-
   const handleCategoryChange = (e) => {
     handleCategoryId(e.target.value);
   };
 
   const handleCategoryId = (e) => {
-    let categoryId = e === "Laptops" ? 0 : 1;
-    changeCategory(categoryId, dispatch);
-    fetchProducts(dispatch, categoryId);
+    changeCategory(e, dispatch);
+    fetchProducts(dispatch, e);
   };
 
   return (
     <div className="flex flex-col items-center h-screen max-w-[50%]">
       <div className="flex flex-col md:flex-row justify-evenly items-center shadow-md w-full py-8">
-        <h4 className="font-bold text-xl">
-          Product Category
-        </h4>
+        <h4 className="font-bold text-xl">Product Category</h4>
 
-        <div className="border-2 w-48 flex justify-center py-1">
-          <select
-            onChange={handleCategoryChange}
-            className="active:bg-white focus:outline-none focus:ring focus:ring-white"
-          >
-            {categories.map((category) => (
-              <option key={category.id} value={category.name}>
-                {category.name}
-              </option>
-            ))}
-          </select>
-        </div>
+        <select
+          onChange={handleCategoryChange}
+          value={categoryId}
+          className="border-2 w-48 flex justify-center text-center py-1 active:bg-white focus:outline-none focus:ring focus:ring-white"
+        >
+          {categories.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.name}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div className="flex gap-x-12 justify-center w-full flex-wrap">
@@ -63,11 +57,11 @@ const HomePage = () => {
             key={item.id}
           >
             <div className="w-full h-36 flex justify-center items-center">
-              {item.categoryId === 0 ? 
+              {item.categoryId === 0 ? (
                 <img src={laptopImg} alt="product" />
-               : 
+              ) : (
                 <img src={mobile} alt="product" />
-              }
+              )}
             </div>
             <div className="w-full mt-4 flex flex-col">
               <ul>

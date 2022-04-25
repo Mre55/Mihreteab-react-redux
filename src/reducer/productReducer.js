@@ -13,7 +13,7 @@ export const changeCategory = (incomingData, dispatch) => {
 export const fetchProducts = (dispatch, categoryId) => {
   axios
     .get(
-      `https://aveosoft-react-assignment.herokuapp.com/products?categoryId=${categoryId}`
+      `https://aveosoft-react-assignment.herokuapp.com/products?categoryId=${categoryId || 0}`
     )
     .then((response) => {
       const dataFromAPI = response.data;
@@ -23,7 +23,6 @@ export const fetchProducts = (dispatch, categoryId) => {
 
 const initialState = {
   product: [],
-  categoryId: 0,
   categories: [
     {
       id: 0,
@@ -39,12 +38,12 @@ const initialState = {
 export const productReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_PRODUCT":
-      return { ...initialState, product: action.payload };
+      return { ...state, product: action.payload };
 
     case "CATEGORY_TYPE":
-      return { ...initialState, categoryId: action.payload };
+      return { ...state, categoryId: action.payload };
 
     default:
-      return initialState;
+      return state;
   }
 };
