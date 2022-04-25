@@ -7,7 +7,7 @@
 
 ## Live Link
 
-- [Heroku]()
+- [Heroku](https://mihreteab-react-redux-app.herokuapp.com/)
 
 ## Built With
 
