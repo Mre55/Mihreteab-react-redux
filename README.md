@@ -24,7 +24,7 @@
 
 ### Prerequisites
 
-- For this project you don't need aditional tools.
+- For this project, you don't need additional tools.
 
 ### Setup
 
@@ -37,7 +37,7 @@
 
 ### Install
 
-- After cloning the repository on your local enviroment and run `npm install` on your terminal.
+- After cloning the repository on your local environment and run `npm install` on your terminal.
 
 ```sh
   npm install
