@@ -41,9 +41,6 @@ export const productReducer = (state = initialState, action) => {
     case "FETCH_PRODUCT":
       return { ...initialState, product: action.payload };
 
-    case "FETCH_CATEGORIES":
-      return { ...initialState, categories: action.payload };
-
     case "CATEGORY_TYPE":
       return { ...initialState, categoryId: action.payload };
 
